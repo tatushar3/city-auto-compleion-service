@@ -1,0 +1,86 @@
+databaseChangeLog:
+- changeSet:
+      id: 1
+      author: tushar
+      changes:
+        - createTable:
+            tableName: CITIES
+            columns:
+              - column:
+                  name: id
+                  type: long
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+              - column:
+                  name: pincode
+                  type: long
+                  constraints:
+                    nullable: false
+              - column:
+                  name: officename
+                  type: varchar(255)
+              - column:
+                  name: officetype
+                  type: varchar(255)
+              - column:
+                  name: Deliverystatus
+                  type: varchar(255)
+              - column:
+                  name: divisionname
+                  type: varchar(255)
+              - column:
+                  name: regionname
+                  type: varchar(255)
+              - column:
+                  name: circlename
+                  type: varchar(255)
+              - column:
+                  name: taluk
+                  type: varchar(255)
+              - column:
+                  name: districtname
+                  type: varchar(255)
+              - column:
+                  name: statename
+                  type: varchar(255)
+- changeSet:
+    id: load-cities-data
+    author: tushar
+    changes:
+    - loadData:
+        columns:
+        - column:
+            name: officename
+            type: string
+        - column:
+            name: pincode
+            type: numeric
+        - column:
+            name: officetype
+            type: string
+        - column:
+            name: Deliverystatu
+            type: string
+        - column:
+            name: divisionname
+            type: string
+        - column:
+            name: regionname
+            type: string
+        - column:
+            name: circlename
+            type: string
+        - column:
+            name: taluk
+            type: string
+        - column:
+            name: districtname
+            type: string
+        - column:
+            name: statename
+            type: string
+        encoding: UTF-8
+        file: static/All_India_pincode_data_26022018.csv
+        separator: ','
+        tableName: CITIES

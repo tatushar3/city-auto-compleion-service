@@ -1,0 +1,22 @@
+- changeSet:
+      id: 1
+      author: tushar
+      changes:
+        - createTable:
+            tableName: CITIES
+            columns:
+              - column:
+                  name: id
+                  type: int
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: name
+                  type: varchar(255)
+              - column:
+                  name: author
+                  type: int
+                  constraints:
+                    nullable: false
